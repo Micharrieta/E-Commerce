@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es" class="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="icon" type="svg" href="../images/logo2.svg">
+    <title>Pago</title>
+</head>
+
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+
+    <section id="Navbar" class="z-[999] flex w-full items-center lg:min-h-20 px-4 lg:px-[5%] py-2">
+        <div class="container mx-auto w-full grid grid-cols-1 lg:grid-cols-[0.4fr_1fr_0.4fr] items-center gap-4">
+
+            <!-- Logo -->
+            <div class="w-48 max-w-full">
+                <a href="index.html" class="block py-3">
+                    <img src="../images/logolight.png" alt="logo" class="w-full h-auto dark:hidden">
+                    <img src="../images/logog2.png" alt="logo" class="hidden w-full h-auto dark:block">
+                </a>
+            </div>
+
+            <!-- Enlaces -->
+            <div class="flex flex-wrap justify-center items-center gap-8 text-base lg:text-lg font-semibold">
+                <a href="index.html" class="hover:text-sky-500 dark:hover:text-sky-400">Inicio</a>
+                <a href="index.html" class="hover:text-sky-500 dark:hover:text-sky-400">Más Información</a>
+                <a href="index.html" class="hover:text-sky-500 dark:hover:text-sky-400">DOFA</a>
+                <a href="productos.html" class="hover:text-sky-500 dark:hover:text-sky-400">Nuestros productos</a>
+                <a href="contacto.html" class="hover:text-sky-500 dark:hover:text-sky-400">Contáctanos</a>
+            </div>
+
+            <!-- Íconos -->
+            <div class="flex justify-end items-center gap-3">
+
+                <!-- Carrito -->
+                <a href="Cart.html" class="relative">
+                    <button
+                        class="text-black dark:text-gray-200 hover:text-sky-500 dark:hover:text-yellow-400 transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 4.5h2.25l1.5 9h12.75l1.5-6H6.75" />
+                            <circle cx="9" cy="19.5" r="1.5" />
+                            <circle cx="17.25" cy="19.5" r="1.5" />
+                        </svg>
+                        <span id="cart-count"
+                            class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full px-1"></span>
+                    </button>
+                </a>
+
+                <!-- Modo oscuro/claro -->
+                <button id="toggleDark"
+                    class="text-black dark:text-gray-200 hover:text-sky-500 dark:hover:text-yellow-400 transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
+        <form action="#" class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+
+
+            <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12 xl:gap-16">
+                <div class="min-w-0 flex-1 space-y-8">
+                    <div class="space-y-4 mb-16">
+                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Detalles de envío</h2>
+
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <div>
+                                <label for="your_name"
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> Nombre
+                                </label>
+                                <input type="text" id="your_name"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                    placeholder="Ingresa tu nombre" required />
+                            </div>
+
+                            <div>
+                                <label for="your_email"
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> Apellido*
+                                </label>
+                                <input type="text" id="your_lastname"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                    placeholder="Ingresa tu apellido" required />
+                            </div>
+
+                            <div>
+                                <div class="mb-2 flex items-center gap-2">
+                                    <label for="select-country-input-3"
+                                        class="block text-sm font-medium text-gray-900 dark:text-white"> País*
+                                    </label>
+                                </div>
+                                <select id="select-country-input-3"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500">
+                                    <option selected>Colombia</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <div class="mb-2 flex items-center gap-2">
+                                    <label for="select-city-input-3"
+                                        class="block text-sm font-medium text-gray-900 dark:text-white"> Ciudad*
+                                    </label>
+                                </div>
+                                <select id="select-city-input-3"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500">
+                                    <option selected>Barranquilla</option>
+                                    <option>Bogotá</option>
+                                    <option>Medellín</option>
+                                    <option>Cartagena</option>
+                                    <option>Cali</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="phone-input-3"
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> Télefono*
+                                </label>
+                                <div class="flex items-center">
+
+
+                                    <div class="relative w-full">
+                                        <input type="text" id="phone-input"
+                                            class="z-20 block w-full rounded-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:border-s-gray-700  dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500"
+                                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="312-123-1234" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    Email* </label>
+                                <input type="email" id="email"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                    placeholder="Ingresa tu correo" required />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+
+                        <div class="">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 ">Información de pago
+                            </h3>
+                            <form action="#"
+                                class="w-full rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6 lg:max-w-xl lg:p-8">
+                                <div class="mb-6 grid grid-cols-2 gap-4">
+                                    <div class="col-span-2 sm:col-span-1">
+                                        <label for="full_name"
+                                            class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> Nombre
+                                            completo
+                                            (como aparece en la tarjeta)* </label>
+                                        <input type="text" id="full_name"
+                                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                            placeholder="Nombre en la tarjeta" required />
+                                    </div>
+
+                                    <div class="col-span-2 sm:col-span-1">
+                                        <label for="card-number-input"
+                                            class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> Número
+                                            de la tarjeta* </label>
+                                        <input type="text" id="card-number-input"
+                                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500  dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                            placeholder="xxxx-xxxx-xxxx-xxxx" pattern="^4[0-9]{12}(?:[0-9]{3})?$"
+                                            required />
+                                    </div>
+
+                                    <div>
+                                        <label for="card-expiration-input"
+                                            class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Fecha
+                                            de expiración* </label>
+                                        <div class="relative">
+                                            <div
+                                                class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
+                                                <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    fill="currentColor" viewBox="0 0 24 24">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5 5a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1 2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2ZM3 19v-7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6.01-6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-10 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <input datepicker datepicker-format="mm/yy" id="card-expiration-input"
+                                                type="text"
+                                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 ps-9 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                                placeholder="12/23" required />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="cvv-input"
+                                            class="mb-2 flex items-center gap-1 text-sm font-medium text-gray-900 dark:text-white">
+                                            CVV*
+                                            <button data-tooltip-target="cvv-desc" data-tooltip-trigger="hover"
+                                                class="text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white">
+                                                <svg class="h-4 w-4" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path fill-rule="evenodd"
+                                                        d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.408-5.5a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2h-.01ZM10 10a1 1 0 1 0 0 2h1v3h-1a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-1v-4a1 1 0 0 0-1-1h-2Z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <div id="cvv-desc" role="tooltip"
+                                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
+                                                Los últimos 3 digitos de la parte posterior
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
+                                        </label>
+                                        <input type="number" id="cvv-input" aria-describedby="helper-text-explanation"
+                                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                            placeholder="•••" required />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md">
+                    <div
+                        class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
+                        <p class="text-xl font-semibold text-gray-900 dark:text-white">Resumen de la orden</p>
+
+                        <div class="space-y-4">
+                            <div class="space-y-2">
+                                <div id="cart-items" class="space-y-4"></div>
+
+                                <dl class="flex items-center justify-between gap-4">
+                                    <dt class="text-base font-normal text-gray-500 dark:text-gray-400">Cantidad de
+                                        productos
+                                    </dt>
+                                    <dd id="cart-num" class="text-base font-medium text-gray-900 dark:text-white"></dd>
+                                </dl>
+
+
+                                <dl
+                                    class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
+                                    <dt class="text-base font-bold text-gray-900 dark:text-white">Total</dt>
+                                    <dd id="cart-total" class="text-base font-bold text-gray-900 dark:text-white"></dd>
+                                </dl>
+                            </div>
+
+                            <a href="#"
+                                class="flex w-full items-center justify-center rounded-lg bg-sky-500 px-5 py-2 text-sm font-medium text-white hover:bg-sky-600 transition duration-200
+                            focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Realizar
+                                compra
+                            </a>
+
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="text-sm font-normal text-gray-500 dark:text-gray-400"> o </span>
+                                <a href="productos.html" title=""
+                                    class="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500">
+                                    Seguir comprando
+                                    <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+</body>
+
+<script>
+    const toggle = document.getElementById('toggleDark');
+    const html = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Establecer el tema al cargar
+    if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalElement = document.getElementById('cart-total');
+        const numElement = document.getElementById('cart-num');
+
+        let total = 0;
+        let totalItems = 0;
+
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            totalItems += item.quantity;
+
+            const card = document.createElement('div');
+            card.className = 'flex items-center gap-4 rounded border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-700';
+
+            card.innerHTML = `
+        <img src="${item.image}" alt="${item.title}" class="h-12 w-12 rounded object-cover" />
+        <div class="flex-1">
+          <h3 class="text-sm font-medium text-black dark:text-white truncate">${item.title}</h3>
+          <p class="text-sm text-gray-800 dark:text-gray-300">${item.quantity} × $${item.price.toLocaleString()}</p>
+        </div>
+      `;
+
+            cartItemsContainer.appendChild(card);
+        });
+
+        totalElement.textContent = `$${total.toLocaleString()}`;
+        numElement.textContent = totalItems;
+    });
+
+    function updateCartIcon() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCountElement = document.getElementById('cart-count');
+        cartCountElement.textContent = totalItems;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCartIcon();
+    });
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es" class="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="icon" type="svg" href="../images/logo2.svg">
+    <title>Contacto</title>
+</head>
+
+<body class="bg-gray-100 text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+
+    <section id="Navbar" class="z-[999] flex w-full items-center lg:min-h-20 px-4 lg:px-[5%] py-2">
+        <div class="container mx-auto w-full grid grid-cols-1 lg:grid-cols-[0.4fr_1fr_0.4fr] items-center gap-4">
+
+            <!-- Logo -->
+            <div class="w-48 max-w-full">
+                <a href="index.html" class="block py-3">
+                    <img src="../images/logolight.png" alt="logo" class="w-full h-auto dark:hidden">
+                    <img src="../images/logog2.png" alt="logo" class="hidden w-full h-auto dark:block">
+                </a>
+            </div>
+
+            <!-- Enlaces -->
+            <div class="flex flex-wrap justify-center items-center gap-8 text-base lg:text-lg font-semibold">
+                <a href="index.html" class="hover:text-sky-500 dark:hover:text-sky-400">Inicio</a>
+                <a href="index.html" class="hover:text-sky-500 dark:hover:text-sky-400">Más Información</a>
+                <a href="index.html" class="hover:text-sky-500 dark:hover:text-sky-400">DOFA</a>
+                <a href="productos.html" class="hover:text-sky-500 dark:hover:text-sky-400">Nuestros productos</a>
+                <a href="contacto.html" class="hover:text-sky-500 dark:hover:text-sky-400">Contáctanos</a>
+            </div>
+
+            <!-- Íconos -->
+            <div class="flex justify-end items-center gap-3">
+
+                <!-- Carrito -->
+                <a href="Cart.html" class="relative">
+                    <button
+                        class="text-black dark:text-gray-200 hover:text-sky-500 dark:hover:text-yellow-400 transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 4.5h2.25l1.5 9h12.75l1.5-6H6.75" />
+                            <circle cx="9" cy="19.5" r="1.5" />
+                            <circle cx="17.25" cy="19.5" r="1.5" />
+                        </svg>
+                        <span id="cart-count"
+                            class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full px-1"></span>
+                    </button>
+                </a>
+
+                <!-- Modo oscuro/claro -->
+                <button id="toggleDark"
+                    class="text-black dark:text-gray-200 hover:text-sky-500 dark:hover:text-yellow-400 transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="px-[5%] py-12 md:py-20 lg:py-16">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="w-full max-w-lg p-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg mx-auto">
+                    <h2 class="rb-5 mb-5 text-center text-5xl font-bold md:mb-6 md:text-6xl lg:text-6xl">
+                        Contáctanos
+                    </h2>
+                    <p class="text-center mb-10 md:text-md">
+                        Estamos aquí para ayudarte con tus dudas y solicitudes.
+                    </p>
+
+                    <!--Inicio Formulario-->
+                    <form id="form-tutoria" class="grid max-w-lg grid-cols-1 grid-rows-[auto_auto] gap-6">
+
+                        <div class="grid grid-cols-2 gap-6">
+
+                            <div class="grid w-full items-center">
+                                <label class="mb-2 block font-medium" for="nombre">Nombres*</label>
+                                <div class="relative flex w-full items-center">
+                                    <input type="text"
+                                        class="w-full focus:border-sky-500 border border-gray-300 bg-white min-h-11 px-3 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500 dark:text-black"
+                                        id="nombres" required />
+                                </div>
+                            </div>
+
+                            <div class="grid w-full items-center">
+                                <label class="mb-2 block font-medium" for="apellidos">Apellidos*</label>
+                                <div class="relative flex w-full items-center">
+                                    <input type="text"
+                                        class="w-full focus:border-sky-500 border border-gray-300 bg-white min-h-11 px-3 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500 dark:text-black"
+                                        id="apellidos" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid gap-6 w-full items-center">
+                            <div class="grid w-full items-center">
+                                <label class="mb-2 block font-medium" for="email">Email*</label>
+                                <div class="relative flex w-full items-center">
+                                    <input type="email"
+                                        class="w-full focus:border-sky-500 border border-gray-300 bg-white min-h-11 px-3 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500 dark:text-black"
+                                        id="email" required />
+                                </div>
+                            </div>
+                            <div class="grid w-full items-center">
+                                <label class="mb-2 block font-medium" for="celular">Celular*</label>
+                                <div class="relative flex w-full items-center">
+                                    <input type="tel"
+                                        class="w-full focus:border-sky-500 border border-gray-300 bg-white min-h-11 px-3 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500 dark:text-black"
+                                        id="celular" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="grid w-full items-center">
+                            <label class="mb-2 block font-medium" for="message">Mensaje</label>
+                            <textarea
+                                class="w-full focus:border-sky-500 border border-gray-300 bg-white min-h-11 px-3 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500 dark:text-black"
+                                id="mensaje" placeholder="Escribe tu mensaje..."></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit"
+                                class="w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 rounded-lg transition duration-200">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="flex justify-center" id="image">
+                    <img src="../images/contact.png" class="w-4/5 h-auto rounded-lg object-cover" />
+                </div>
+            </div>
+    </section>
+</body>
+
+<script>
+    const toggle = document.getElementById('toggleDark');
+    const html = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Establecer el tema al cargar
+    if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+
+     function updateCartIcon() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCountElement = document.getElementById('cart-count');
+        cartCountElement.textContent = totalItems;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCartIcon();
+    });
+
+</script>
+
+</html>
